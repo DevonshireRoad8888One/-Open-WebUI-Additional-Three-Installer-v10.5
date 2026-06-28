@@ -1,6 +1,24 @@
 # -Open-WebUI-Additional-Three-Installer-v10.5
 How to use itPaste the big block above into your terminal and press Enter. Review the created file if you want:bash  cat ~/install-openwebui-v10.5-new.sh | head -100  Run the installer:bash  ~/install-openwebui-v10.5-new.sh  After it finishes, you can start the new stack with:bash  ~/openwebui-manager/start-all.sh ~/openwebui-manager/health-all.sh
 
+
+✅ openwebui2ver7-v10 setup complete
+
+🎉 Installation of additional v10.5 instances complete!
+
+Useful commands (new v10.5 stack only):
+   ~/openwebui-manager/start-all.sh     # Start the three new ones
+   ~/openwebui-manager/stop-all.sh      # Stop the three new ones
+   ~/openwebui-manager/health-all.sh    # Health check
+
+Individual control:
+   ~/testwebui-v10/start.sh
+   ~/openwebui2ver7-v10/start.sh
+   ~/openwebui4/start.sh
+
+Your original three servers (testwebui, openwebui2ver7, openwebui3) are untouched.
+
+
 How to use itPaste the big block above into your terminal and press Enter.
 Review the created file if you want:bash
 
