@@ -1,0 +1,136 @@
+ Perfect! Here's the combined management scripts that control all six servers (your original three + the three new v10.5 ones) from one place.Combined Scripts (All Six Instances)Run these three commands to update your ~/openwebui-manager/ with the combined versions:bash
+
+# 1. Combined start-all.sh (starts Ollama if needed + all 6 servers)
+cat > ~/openwebui-manager/start-all.sh << 'STARTALL'
+#!/usr/bin/env bash
+set -euo pipefail
+echo "🚀 Starting ALL Open WebUI Servers (Old + New v10.5)..."
+
+# Start shared Ollama if not running
+if ! curl -fsS "http://127.0.0.1:11434/api/version" >/dev/null 2>&1; then
+    echo "🔄 Starting shared Ollama..."
+    nohup ollama serve > "$HOME/openwebui-manager/logs/ollama.log" 2>&1 &
+    echo $! > "$HOME/openwebui-manager/run/ollama.pid"
+    sleep 8
+fi
+
+# All six instances
+ALL_NAMES=(testwebui openwebui2ver7 openwebui3 testwebui-v10 openwebui2ver7-v10 openwebui4)
+
+for NAME in "${ALL_NAMES[@]}"; do
+    if [ -x "$HOME/$NAME/start.sh" ]; then
+        echo "Starting $NAME..."
+        "$HOME/$NAME/start.sh"
+        sleep 5
+    else
+        echo "⚠️  $NAME not found or no start.sh"
+    fi
+done
+
+echo "✅ ALL servers started."
+echo ""
+echo "Run: ~/openwebui-manager/health-all.sh   to check status"
+STARTALL
+chmod +x ~/openwebui-manager/start-all.sh
+
+# 2. Combined stop-all.sh
+cat > ~/openwebui-manager/stop-all.sh << 'STOPALL'
+#!/usr/bin/env bash
+set -euo pipefail
+echo "🛑 Stopping ALL Open WebUI Servers (Old + New v10.5)..."
+
+ALL_NAMES=(testwebui openwebui2ver7 openwebui3 testwebui-v10 openwebui2ver7-v10 openwebui4)
+
+for NAME in "${ALL_NAMES[@]}"; do
+    DIR="$HOME/$NAME"
+    if [ -f "$DIR/run/openwebui.pid" ]; then
+        PID=$(cat "$DIR/run/openwebui.pid" 2>/dev/null || echo "")
+        if [ -n "$PID" ] && kill -0 "$PID" 2>/dev/null; then
+            kill "$PID" 2>/dev/null || true
+            echo "Stopped $NAME (PID $PID)"
+        fi
+        rm -f "$DIR/run/openwebui.pid"
+    fi
+done
+
+# Stop managed Ollama (if we started it)
+if [ -f "$HOME/openwebui-manager/run/ollama.pid" ]; then
+    PID=$(cat "$HOME/openwebui-manager/run/ollama.pid" 2>/dev/null || echo "")
+    if [ -n "$PID" ] && kill -0 "$PID" 2>/dev/null; then
+        kill "$PID" 2>/dev/null || true
+        echo "Stopped managed Ollama (PID $PID)"
+    fi
+    rm -f "$HOME/openwebui-manager/run/ollama.pid"
+fi
+
+echo "✅ ALL servers stopped."
+STOPALL
+chmod +x ~/openwebui-manager/stop-all.sh
+
+# 3. Combined health-all.sh
+cat > ~/openwebui-manager/health-all.sh << 'HEALTH'
+#!/usr/bin/env bash
+set -euo pipefail
+echo "🔐 Open WebUI - FULL Health Report (All 6 Servers)"
+echo "=================================================="
+echo "Date: $(date)"
+echo ""
+
+# Ollama status
+if curl -fsS "http://127.0.0.1:11434/api/version" >/dev/null 2>&1; then
+    echo "Ollama (11434): ✅ OK"
+else
+    echo "Ollama (11434): ❌ DOWN"
+fi
+echo ""
+
+ALL_NAMES=(testwebui openwebui2ver7 openwebui3 testwebui-v10 openwebui2ver7-v10 openwebui4)
+
+for NAME in "${ALL_NAMES[@]}"; do
+    DIR="$HOME/$NAME"
+    [ -d "$DIR" ] || { echo "⚠️  $NAME: Folder not found"; echo ""; continue; }
+
+    PORT=$(grep '^WEBUI_PORT=' "$DIR/.env" 2>/dev/null | cut -d= -f2 || echo "??")
+    CODE=$(curl -fsS -o /dev/null -w "%{http_code}" "http://127.0.0.1:$PORT" 2>/dev/null || echo "000")
+
+    if [[ "$CODE" =~ ^(200|302)$ ]]; then
+        STATUS="✅ Running"
+    else
+        STATUS="⚠️ Not responding (HTTP $CODE)"
+    fi
+
+    DATA_SIZE=$(du -sh "$DIR/data" 2>/dev/null | cut -f1 || echo "N/A")
+    MODELS_SIZE=$(du -sh "$DIR/models" 2>/dev/null | cut -f1 || echo "N/A")
+
+    echo "Instance: $NAME (port $PORT) → $STATUS"
+    echo "   Disk: Data=$DATA_SIZE | Models=$MODELS_SIZE"
+    echo ""
+done
+
+echo "=================================================="
+echo "Tip: Use ~/openwebui-manager/start-all.sh or stop-all.sh"
+HEALTH
+chmod +x ~/openwebui-manager/health-all.sh
+
+echo ""
+echo "✅ Combined management scripts updated successfully!"
+echo ""
+echo "Now you can use:"
+echo "   ~/openwebui-manager/start-all.sh     # Start ALL 6 servers"
+echo "   ~/openwebui-manager/stop-all.sh      # Stop ALL 6 servers"
+echo "   ~/openwebui-manager/health-all.sh    # Full health report for all 6"
+
+How to Use After Running the Commands Abovebash
+
+# Check everything
+~/openwebui-manager/health-all.sh
+
+# Start all six servers at once
+~/openwebui-manager/start-all.sh
+
+# Stop all six servers at once
+~/openwebui-manager/stop-all.sh
+
+Individual Control (still available)Old servers: ~/testwebui/start.sh, ~/openwebui2ver7/start.sh, ~/openwebui3/start.sh
+New servers: ~/testwebui-v10/start.sh, ~/openwebui2ver7-v10/start.sh, ~/openwebui4/start.sh
+
