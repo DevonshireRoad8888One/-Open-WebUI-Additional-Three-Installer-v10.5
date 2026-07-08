@@ -1,4 +1,76 @@
 
+
+✅ ALL servers started."
+echo ""
+echo "Run: ~/openwebui-manager/health-all.sh   to check status"
+STARTALL
+chmod +x ~/openwebui-manager/start-all.sh
+
+echo "   ~/openwebui-manager/health-all.sh    # Full health report for all 6"2>/dev/null || echo "000")
+
+✅ Combined management scripts updated successfully!
+
+Now you can use:
+   ~/openwebui-manager/start-all.sh     # Start ALL 6 servers
+   ~/openwebui-manager/stop-all.sh      # Stop ALL 6 servers
+   ~/openwebui-manager/health-all.sh    # Full health report for all 6
+devonshireroad77788881@DevonshireRoad7:~$ ~/openwebui-manager/health-all.sh
+
+🔐 Open WebUI - FULL Health Report (All 6 Servers)
+==================================================
+
+ ~/openwebui-manager/start-all.shdevonshireroad77788881@DevonshireRoad7:~$  ~/openwebui-manager/start-all.sh
+🚀 Starting ALL Open WebUI Servers (Old + New v10.5)...
+Starting testwebui...
+🚀 Starting testwebui → http://127.0.0.1:8080
+✅ testwebui started (PID 550)
+Starting openwebui2ver7...
+🚀 Starting openwebui2ver7 → http://127.0.0.1:8000
+✅ openwebui2ver7 started (PID 568)
+Starting openwebui3...
+🚀 Starting openwebui3 → http://127.0.0.1:8001
+✅ openwebui3 started (PID 597)
+Starting testwebui-v10...
+🚀 Starting testwebui-v10 → http://127.0.0.1:8082
+✅ testwebui-v10 started (PID 623)
+Starting openwebui2ver7-v10...
+🚀 Starting openwebui2ver7-v10 → http://127.0.0.1:8002
+✅ openwebui2ver7-v10 started (PID 647)
+Starting openwebui4...
+🚀 Starting openwebui4 → http://127.0.0.1:8003
+✅ openwebui4 started (PID 689)
+✅ ALL servers started.
+
+Run: ~/openwebui-manager/health-all.sh   to check status
+devonshireroad77788881@DevonshireRoad7:~$  ~/openwebui-manager/health-all.sh
+🔐 Open WebUI - FULL Health Report (All 6 Servers)
+==================================================
+Date: Tue Jul  7 02:06:58 CST 2026
+
+Ollama (11434): ✅ OK
+
+Instance: testwebui (port 8080) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: openwebui2ver7 (port 8000) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: openwebui3 (port 8001) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: testwebui-v10 (port 8082) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: openwebui2ver7-v10 (port 8002) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: openwebui4 (port 8003) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+==================================================
+Tip: Use ~/openwebui-manager/start-all.sh or stop-all.sh
+devonshireroad77788881@DevonshireRoad7:~$
+
 How to Use After Running the Commands Abovebash
 
 Check everything
