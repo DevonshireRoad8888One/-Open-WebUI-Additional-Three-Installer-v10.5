@@ -1,4 +1,4 @@
-
+System Prompt: Summarize or extract key points and do a fully detailed analysis and summery in very much detailed manner.
 
 ✅ ALL servers started."
 echo ""
