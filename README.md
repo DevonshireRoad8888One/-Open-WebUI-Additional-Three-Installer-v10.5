@@ -875,7 +875,191 @@ New servers: ~/testwebui-v10/start.sh, ~/openwebui2ver7-v10/start.sh, ~/openwebu
 
 Would you like me to also create a single all-servers.sh wrapper or any other helper scripts (e.g., restart-all, backup-all, etc.)? Just let me know!
 
+ ~/openwebui-manager/start-all.sh && ~/library-manager/start-all.sh && ~/openwebui-manager/health-all.sh ~/openwebui-manager/health-all.sh && ~/openwebui-manager/health-all.sh &&  ~/library-manager/health-all.sh && ~/openwebui-manager/health-all.sh &&  ~/library-manager/health-all.sh && ~/library-manager/health-all.sh && ~/library-manager/health-all.sh
+🚀 Starting ALL Open WebUI Servers (Old + New v10.5)...
+Starting testwebui...
+🚀 Starting testwebui → http://127.0.0.1:8080
+✅ testwebui started (PID 15173)
+Starting openwebui2ver7...
+🚀 Starting openwebui2ver7 → http://127.0.0.1:8000
+✅ openwebui2ver7 started (PID 15191)
+Starting openwebui3...
+🚀 Starting openwebui3 → http://127.0.0.1:8001
+✅ openwebui3 started (PID 15216)
+Starting testwebui-v10...
+🚀 Starting testwebui-v10 → http://127.0.0.1:8082
+✅ testwebui-v10 started (PID 15235)
+Starting openwebui2ver7-v10...
+🚀 Starting openwebui2ver7-v10 → http://127.0.0.1:8002
+✅ openwebui2ver7-v10 started (PID 15274)
+Starting openwebui4...
+🚀 Starting openwebui4 → http://127.0.0.1:8003
+✅ openwebui4 started (PID 15295)
+✅ ALL servers started.
 
+Run: ~/openwebui-manager/health-all.sh   to check status
+🚀 Starting Personal Library v12.0...
+🌐 Starting Library server on port 8771...
+✅ Library started (PID 15364)
+📚 Web UI: http://localhost:8771
+🔐 Personal Library v12.0 — Health Report
+==================================================
+Date: Mon Aug 31 15:17:40 CST 2026
+
+Server (PID 15364): ✅ Running
+HTTP (port 8771): ✅ Responding (200)
+Database: ✅ Exists (68K)
+
+Data directories:
+   inbox: 0 files (4.0K)
+   imports: 44 files (20G)
+   covers: 0 files (4.0K)
+   files: 0 files (4.0K)
+
+==================================================
+Tip: ~/library-manager/start-all.sh | stop-all.sh
+🔐 Open WebUI - FULL Health Report (All 6 Servers)
+==================================================
+Date: Mon Aug 31 15:17:41 CST 2026
+
+Ollama (11434): ✅ OK
+
+Instance: testwebui (port 8080) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: openwebui2ver7 (port 8000) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: openwebui3 (port 8001) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: testwebui-v10 (port 8082) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: openwebui2ver7-v10 (port 8002) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: openwebui4 (port 8003) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+==================================================
+Tip: Use ~/openwebui-manager/start-all.sh or stop-all.sh
+🔐 Open WebUI - FULL Health Report (All 6 Servers)
+==================================================
+Date: Mon Aug 31 15:17:41 CST 2026
+
+Ollama (11434): ✅ OK
+
+Instance: testwebui (port 8080) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: openwebui2ver7 (port 8000) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: openwebui3 (port 8001) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: testwebui-v10 (port 8082) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: openwebui2ver7-v10 (port 8002) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: openwebui4 (port 8003) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+==================================================
+Tip: Use ~/openwebui-manager/start-all.sh or stop-all.sh
+🔐 Personal Library v12.0 — Health Report
+==================================================
+Date: Mon Aug 31 15:17:41 CST 2026
+
+Server (PID 15364): ✅ Running
+HTTP (port 8771): ✅ Responding (200)
+Database: ✅ Exists (68K)
+
+Data directories:
+   inbox: 0 files (4.0K)
+   imports: 44 files (20G)
+   covers: 0 files (4.0K)
+   files: 0 files (4.0K)
+
+==================================================
+Tip: ~/library-manager/start-all.sh | stop-all.sh
+🔐 Open WebUI - FULL Health Report (All 6 Servers)
+==================================================
+Date: Mon Aug 31 15:17:41 CST 2026
+
+Ollama (11434): ✅ OK
+
+Instance: testwebui (port 8080) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: openwebui2ver7 (port 8000) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: openwebui3 (port 8001) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: testwebui-v10 (port 8082) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: openwebui2ver7-v10 (port 8002) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+Instance: openwebui4 (port 8003) → ✅ Running
+   Disk: Data=4.0K | Models=4.0K
+
+==================================================
+Tip: Use ~/openwebui-manager/start-all.sh or stop-all.sh
+🔐 Personal Library v12.0 — Health Report
+==================================================
+Date: Mon Aug 31 15:17:42 CST 2026
+
+Server (PID 15364): ✅ Running
+HTTP (port 8771): ✅ Responding (200)
+Database: ✅ Exists (68K)
+
+Data directories:
+   inbox: 0 files (4.0K)
+   imports: 44 files (20G)
+   covers: 0 files (4.0K)
+   files: 0 files (4.0K)
+
+==================================================
+Tip: ~/library-manager/start-all.sh | stop-all.sh
+🔐 Personal Library v12.0 — Health Report
+==================================================
+Date: Mon Aug 31 15:17:42 CST 2026
+
+Server (PID 15364): ✅ Running
+HTTP (port 8771): ✅ Responding (200)
+Database: ✅ Exists (68K)
+
+Data directories:
+   inbox: 0 files (4.0K)
+   imports: 44 files (20G)
+   covers: 0 files (4.0K)
+   files: 0 files (4.0K)
+
+==================================================
+Tip: ~/library-manager/start-all.sh | stop-all.sh
+🔐 Personal Library v12.0 — Health Report
+==================================================
+Date: Mon Aug 31 15:17:42 CST 2026
+
+Server (PID 15364): ✅ Running
+HTTP (port 8771): ✅ Responding (200)
+Database: ✅ Exists (68K)
+
+Data directories:
+   inbox: 0 files (4.0K)
+   imports: 44 files (20G)
+   covers: 0 files (4.0K)
+   files: 0 files (4.0K)
+
+==================================================
+Tip: ~/library-manager/start-all.sh | stop-all.sh
 
 
 
