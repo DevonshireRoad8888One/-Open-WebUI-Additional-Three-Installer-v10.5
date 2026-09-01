@@ -5,7 +5,10 @@ Fresh install on any laptop ~/install-personal-library-v11.7c.sh
 Start/Stop/Check ~/library-manager/start-all.sh ~/library-manager/stop-all.sh ~/library-manager/health-all.sh
 
 Run this script to start Library System & All 7 Servers, must install 3 plus 3 plus++ server packages: Open-Web.UI-Ollama.com-Auto-installer-v10-All-Three-Installer --- -Open-WebUI-Additional-Three-Installer-v10.5
-_______________________________________________________________________________________________________________________
+
+
+Run this script to start Library System:
+_________________________________________________________________________________________________
 ~/openwebui-manager/start-all.sh && ~/library-manager/start-all.sh && ~/openwebui-manager/health-all.sh ~/openwebui-manager/health-all.sh && ~/openwebui-manager/health-all.sh &&  ~/library-manager/health-all.sh && ~/openwebui-manager/health-all.sh &&  ~/library-manager/health-all.sh && ~/library-manager/health-all.sh && ~/library-manager/health-all.sh
  ~/openwebui-manager/start-all.sh && ~/library-manager/start-all.sh && ~/openwebui-manager/health-all.sh ~/openwebui-manager/health-all.sh && ~/openwebui-manager/health-all.sh &&  ~/library-manager/health-all.sh && ~/openwebui-manager/health-all.sh &&  ~/library-manager/health-all.sh && ~/library-manager/health-all.sh && ~/library-manager/health-all.sh
 ________________________________________________________________________________________________________________________
