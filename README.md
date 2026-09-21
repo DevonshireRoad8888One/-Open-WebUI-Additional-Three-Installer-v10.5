@@ -6,8 +6,7 @@ Start/Stop/Check ~/library-manager/start-all.sh ~/library-manager/stop-all.sh ~/
 
 Run this script to start Library System & All 7 Servers, must install 3 plus 3 plus++ server packages: Open-Web.UI-Ollama.com-Auto-installer-v10-All-Three-Installer --- -Open-WebUI-Additional-Three-Installer-v10.5
 
-
-Run this script to start Library System:
+Run this script to start Library System: Full Start Script: Wait 2 Minutes then run scrip below once or twice util all Check marks turn Green, on the Servers start. Usually Twice.
 _________________________________________________________________________________________________
 
 
