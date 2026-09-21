@@ -9,8 +9,11 @@ Run this script to start Library System & All 7 Servers, must install 3 plus 3 p
 
 Run this script to start Library System:
 _________________________________________________________________________________________________
-~/openwebui-manager/start-all.sh && ~/library-manager/start-all.sh && ~/openwebui-manager/health-all.sh ~/openwebui-manager/health-all.sh && ~/openwebui-manager/health-all.sh &&  ~/library-manager/health-all.sh && ~/openwebui-manager/health-all.sh &&  ~/library-manager/health-all.sh && ~/library-manager/health-all.sh && ~/library-manager/health-all.sh
- ~/openwebui-manager/start-all.sh && ~/library-manager/start-all.sh && ~/openwebui-manager/health-all.sh ~/openwebui-manager/health-all.sh && ~/openwebui-manager/health-all.sh &&  ~/library-manager/health-all.sh && ~/openwebui-manager/health-all.sh &&  ~/library-manager/health-all.sh && ~/library-manager/health-all.sh && ~/library-manager/health-all.sh
+
+
+~/openwebui-manager/health-all.sh && ~/openwebui-manager/health-all.sh && ~/openwebui-manager/health-all.sh && ~/openwebui-manager/health-all.sh && ~/openwebui-manager/health-all.sh && ~/openwebui-manager/health-all.sh && ~/openwebui-manager/health-all.sh && ~/openwebui-manager/health-all.sh ~/openwebui-manager/health-all.sh && ~/openwebui-manager/health-all.sh && ~/openwebui-manager/health-all.sh && ~/openwebui-manager/health-all.sh && ~/openwebui-manager/health-all.sh
+
+
 ________________________________________________________________________________________________________________________
 ✅ ALL servers started."
 echo ""
